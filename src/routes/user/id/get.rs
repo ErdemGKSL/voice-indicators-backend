@@ -19,7 +19,7 @@ pub async fn trigger(Path(user_id): Path<u64>) -> Result<Json<Value>, StatusCode
   };
 
   let voices = VOICE_CHANNELS.lock().await;
-  let voice = if let Some(voice) = VOICE_CHANNELS.lock().await.get(&member.voice_channel_id) {
+  let voice = if let Some(voice) = voices.get(&member.voice_channel_id) {
     let voice = voice.clone();
     drop(voices);
     voice
