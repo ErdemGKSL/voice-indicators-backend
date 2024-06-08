@@ -1,0 +1,1 @@
+target/release/voice-indicators-backend
