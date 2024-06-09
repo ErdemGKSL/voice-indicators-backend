@@ -27,7 +27,7 @@ pub async fn trigger(Path(user_id): Path<u64>) -> Result<Json<Value>, StatusCode
     return Err(StatusCode::NOT_FOUND)
   };
 
-  return Ok(Json(json!({
+  Ok(Json(json!({
     "ok": true,
     "data": {
       "member": member,
